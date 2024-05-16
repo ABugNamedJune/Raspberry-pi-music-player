@@ -40,7 +40,7 @@ def get_songs_by_album(album_name):
 #oh god, don't look! If this made it to release I'm going to kms
 def generate_song_list():
     song_list = []
-    for (root,_,files) in os.walk(os.getcwd() + '\\Library\\'):
+    for (root,_,files) in os.walk(os.getcwd() + '\\Test Library\\'):
         for i in files:
             if(i != ""):
                 current_song_path = os.path.abspath(os.path.join(root, i))
@@ -49,11 +49,18 @@ def generate_song_list():
     return(song_list)
 
 #Saves the song list to a json file
+#Should be run on startup or whenever changes are applied to the file structure.
 def export_song_list():
     with open((os.getcwd() + '\\song_list.json'), 'w') as fout:
         json.dump(generate_song_list(), fout)
 
-#imports the song list from a json file
+#imports the song list from a json file and returns a list of dictionaries.
 def import_song_list():
-    #I'm writing this during my down time at work, and this function is going to be so easy to implement, but also I'm so tired and don't want to, so for now we'll just generate a new json file each time we need one.  k?
-    pass
+    song_list = []
+    #TODO: Write some shit to make sure this file actually exists.  I can do that later tho, 'cause I'm lazy and there's more exciting shit going on.
+    with open((os.getcwd() + '\\song_list.json')) as fin:
+        song_list = json.load(fin)
+    return(song_list)
+
+export_song_list()
+print(import_song_list())
