@@ -1,6 +1,6 @@
-#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.15.24
+#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.16.24
 #This handles importing all songs into an indexed series of dictionaries
-#I think doing it this way will save resources at runtime... but may cause issues on systems where RAM is severely limited.
+#I think doing it this way will save resources at runtime...
 
 import os
 import json
