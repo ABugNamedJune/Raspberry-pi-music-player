@@ -1,4 +1,3 @@
-#exists for testing purposes.  Ignore for now.
 import json
 
 blah = []
