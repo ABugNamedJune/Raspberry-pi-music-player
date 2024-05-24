@@ -1,4 +1,4 @@
-#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.20.24
+#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.24.24
 #This handles importing all songs into an indexed series of dictionaries
 #I think doing it this way will save resources at runtime... but may cause issues on systems where RAM is severely limited.
 #asdflkjalksdfj
@@ -19,7 +19,7 @@ def get_albums_by_artist(artist_name):
     for i in import_song_list():
         if i["artist"] == artist_name:
             albums_by_artist.add(i["album"])
-    return sorted(albums_by_artist)
+    return ["album", sorted(albums_by_artist)]
 
 
 #returns all albums
@@ -27,30 +27,28 @@ def get_all_albums():
     albums = set()
     for i in import_song_list():
         albums.add(i["album"])
-    return sorted(albums)
+    return ["album", sorted(albums)]
 
-#returns all songs
-#this is a little jank.  There are going to be songs with the same name, so this needs some way to identify songs with the same name
-#I'll try to find a way to get a better identifyer... maybe assign each song a number?
-def get_all_songs():
-    songs = list()
-    for i in import_song_list():
-        songs.append(i["title"])
-    return sorted(songs)
+#already deprecated, use import_song_list()
+#def get_all_songs():
+#    songs = list()
+#    for i in import_song_list():
+#        songs.append(i["title"])
+#    return sorted(songs)
 
 #returns all artists
 def get_all_artists():
     artists = set()
     for i in (import_song_list()):
         artists.add(i["artist"])
-    return sorted(artists)
+    return ["artist", sorted(artists)]
 
 #returns all songs in a given album
 def get_songs_by_album(album_name):
-    songs_by_album = set()
+    songs_by_album = list()
     for i in import_song_list():
         if i["album"] == album_name:
-            songs_by_album.add(i["album"])
+            songs_by_album.append(i)
     return songs_by_album
 
 
