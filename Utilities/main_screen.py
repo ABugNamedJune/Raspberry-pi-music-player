@@ -1,4 +1,4 @@
-#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.22.24
+#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.31.24
 #This is where you'll start when running the program... at least for now
 #import primary_ui
 
