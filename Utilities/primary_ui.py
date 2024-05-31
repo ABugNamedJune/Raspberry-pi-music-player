@@ -7,17 +7,18 @@ import time
 
 ui_columns = 5
 
-#This is the main UI element
+#This is the main UI element, it takes a menu type (e.g. "artist", "album") and a value (e.g. "Starfucker", "Jupiter")
+#And populates a navigable menu with the values from that data set
 def generate_menu(menu_items):
     cursor_position = 0
 
     #trap the user in a recursive loop to generate sub menus
     while(True):
         print_menu_windows_console(cursor_position, menu_items)
-        #ugh, I hate doing this, but sleep for a little bit 'cause it's going too quick
+        #ugh, I hate doing this, but sleep for a little bit 'cause ur going too quick, bb
         time.sleep(.1)
         cursor_position = parse_user_input(cursor_position, menu_items)
-        #hacky bullshit alert!
+        #hacky bullshit alert
         if cursor_position == -5:
             break
         cursor_position = constrain_cursor(cursor_position, menu_items)
