@@ -1,4 +1,4 @@
-#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.24.24
+#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.31.24
 
 import song_index
 import os
