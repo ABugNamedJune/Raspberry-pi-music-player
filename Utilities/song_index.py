@@ -3,6 +3,7 @@
 
 import os
 import json
+import time
 
 #   -----
 #   Chapter 1:
@@ -16,8 +17,7 @@ def get_all_x(identifier):
     #songs have to be handled differently since they require a unique identifier to prevent culling duplicates
     if identifier == "song":
         for i in import_song_list():
-            #reintroduce the metadata associated with the specific object type (this feels redundant, but so does a lot of things that make me happy)
-            x_return_list.append({"type": "song", "name": i["title"], "number": i["number"]})
+            x_return_list.append({"type": "song", "name": i["song"], "number": i["number"]})
     else:
         #scan the entire song list and put together all objects of x-type, removing duplicates
         x_set = set()
@@ -44,7 +44,7 @@ def get_songs_by_album(album_name):
     songs_by_album = list()
     for i in import_song_list():
         if i["album"] == album_name:
-            songs_by_album.append({"type": "song", "name": i["title"], "number": i["number"]})
+            songs_by_album.append({"type": "song", "name": i["song"], "number": i["number"]})
     return songs_by_album
 
 

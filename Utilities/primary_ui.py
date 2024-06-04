@@ -1,4 +1,4 @@
-#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 5.31.24
+#PyPlayer - June Bush - June@JuneBush.com - GPL3.0 - Last updated 6.3.24.24
 
 import song_index
 import os
@@ -16,7 +16,7 @@ def generate_menu(menu_items):
     while(True):
         print_menu_windows_console(cursor_position, menu_items)
         #ugh, I hate doing this, but sleep for a little bit 'cause ur going too quick, bb
-        time.sleep(.1)
+        time.sleep(.2)
         cursor_position = parse_user_input(cursor_position, menu_items)
         #hacky bullshit alert
         if cursor_position == -5:
@@ -69,10 +69,12 @@ def parse_sub_menu(menu_item):
         generate_menu(song_index.get_all_x("artist"))
     elif type == "all albums":
         generate_menu(song_index.get_all_x("album"))
+    elif type == "all songs":
+        generate_menu(song_index.get_all_x("song"))
     elif type == "artist":
         generate_menu(song_index.get_albums_by_artist(menu_item["name"]))
     elif type == "album":
-        generate_menu(song_index.get_songs_by_album(menu_item["album"]))
+        generate_menu(song_index.get_songs_by_album(menu_item["name"]))
         
         
 #keeps the cursor from going off of the list
