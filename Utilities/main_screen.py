@@ -12,6 +12,6 @@ import time
 #    menu_items = [{"type": "all artists", "name": "All Artists", "number": 0}, {"type": "all albums", "name": "All Albums", "number": 0}, {"type": "all songs", "name": "All Songs", "number": 0},{"type": "settings", "name": "Settings", "number": 0}, {"type": "about", "name": "About", "number": 0},]
 #    primary_ui.generate_menu(menu_items)
 
-test_menu = ["blahblahblahblahblahblah", "bleh", "blegh", "ugh", "heck", "jeez", "dang", "shoot"]
+test_menu = ["Juniper Bush is rlly cool", "This is a long list entry", "blegh", "ugh", "heck", "jeez", "dang", "shoot"]
 while True:
     display_menu.generate_menu(test_menu, 2)
