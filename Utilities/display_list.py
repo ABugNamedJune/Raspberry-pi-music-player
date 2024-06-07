@@ -101,10 +101,12 @@ def render():
             #just select it if not
             elif(cursor_position == index):
                 print(">" + i[display_item].ljust(columns, " ") +"<")
+            #I don't need to document this part, you get it.
             elif(len(i[display_item]) > columns):
                 print(" " + i[display_item][:columns] + " ")
+            #don't send me an email if you don't get this.
+            #send me an email saying hello instead, and then let's meet up and makeout.
             else:
                 print(" " + i[display_item] + " ")
         
-
 #generate_menu(["something went wrong -_-", "whoops", "uh oh", "try restarting this application"],1)

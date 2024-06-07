@@ -6,6 +6,6 @@ library_location = ""
 ###   Display configuration   ###
 #currently there's a bug if lines is even, and I can't be bothered to fix it.
 lines = int(5)
-columns = 10
+columns = 20
 #platform - "Windows", "Linux", "Adafruit"
 platform = "Windows"
